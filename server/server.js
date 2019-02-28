@@ -1,6 +1,7 @@
 const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
+
 const path = require('path');
 
 const app = express();
@@ -11,8 +12,11 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
+// IO = esta es la comunicacion del backend
 module.exports.io = socketIO(server);
 require('./sockets/socket');
+
+
 
 
 
